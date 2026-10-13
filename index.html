@@ -10,6 +10,18 @@
       box-sizing: border-box;
     }
 
+    .logo-link {
+      display: inline-block;
+    }
+
+    .logo {
+      display: block;
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -106,9 +118,13 @@
 </head>
 <body>
 
-  <header>
-    <h1>COMASP FERRAMENTAS</h1>
-    <nav>
+ <header>
+  <a href="#inicio" class="logo-link">
+    <img src="images/logonovaComasp.png"
+         alt="Comasp Ferramentas"
+         class="logo">
+  </a>
+  <nav>
       <a href="#inicio">Início</a>
       <a href="#categorias">Categorias</a>
       <a href="#contato">Contato</a>
