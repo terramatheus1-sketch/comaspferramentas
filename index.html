@@ -895,6 +895,20 @@
         display: none;
       }
     }
+    
+/* Carrossel automático de marcas */
+.brand-page {
+  display: none;
+}
+
+.brand-page.active {
+  display: block;
+  animation: fade-in 0.45s ease;
+}
+
+.brand-page .brands-grid {
+  width: 100%;
+}
   </style>
 </head>
 
@@ -1219,22 +1233,41 @@
           </div>
         </div>
 
-        <div class="brands-grid">
-          <!-- Substitua estes nomes pelos logotipos das marcas reais -->
-          <div class="brand"><img src="images/dewalt.jpg" alt="dewalt"></div>
-          <div class="brand"><img src="images/esab.jpg" alt="esab"></div>
-          <div class="brand"><img src="images/belenus.jpg" alt="belenus"></div>
-          <div class="brand"><img src="images/bosch.jpg" alt="bosch"></div>
-          <div class="brand"><img src="images/branco.jpg" alt="branco"></div>
-          <div class="brand"><img src="images/ciser.jpg" alt="ciser"></div>
-          <div class="brand"><img src="images/gedore.jpg" alt="gedore"></div>
-          <div class="brand"><img src="images/jacto.jpg" alt="jacto"></div>
-          <div class="brand"><img src="images/karcher.jpg" alt="karcher"></div>
-          <div class="brand"><img src="images/lufkin.jpg" alt="lufkin"></div>
-          <div class="brand"><img src="images/lynus.jpg" alt="lynus"></div>
-          <div class="brand"><img src="images/makita.jpg" alt="makita"></div>
-        </div>
+        <!-- GRUPO 1: PRIMEIRAS 12 MARCAS -->
+<div class="brand-page active">
+  <div class="brands-grid">
+    <div class="brand"><img src="images/dewalt.jpg" alt="DeWalt"></div>
+    <div class="brand"><img src="images/esab.jpg" alt="ESAB"></div>
+    <div class="brand"><img src="images/belenus.jpg" alt="Belenus"></div>
+    <div class="brand"><img src="images/bosch.jpg" alt="Bosch"></div>
+    <div class="brand"><img src="images/branco.jpg" alt="Branco"></div>
+    <div class="brand"><img src="images/ciser.jpg" alt="Ciser"></div>
+    <div class="brand"><img src="images/gedore.jpg" alt="Gedore"></div>
+    <div class="brand"><img src="images/jacto.jpg" alt="Jacto"></div>
+    <div class="brand"><img src="images/karcher.jpg" alt="Kärcher"></div>
+    <div class="brand"><img src="images/lufkin.jpg" alt="Lufkin"></div>
+    <div class="brand"><img src="images/lynus.jpg" alt="Lynus"></div>
+    <div class="brand"><img src="images/makita.jpg" alt="Makita"></div>
+  </div>
+</div>
 
+<!-- GRUPO 2: PRÓXIMAS 12 MARCAS -->
+<div class="brand-page">
+  <div class="brands-grid">
+    <div class="brand"><img src="images/marcon.jpg" alt="Marcon"></div>
+    <div class="brand"><img src="images/minipa.jpg" alt="Minipa"></div>
+    <div class="brand"><img src="images/orbi.jpg" alt="Orbi"></div>
+    <div class="brand"><img src="images/pdr.jpg" alt="PDR"></div>
+    <div class="brand"><img src="images/sata.jpg" alt="Sata"></div>
+    <div class="brand"><img src="images/schulz.jpg" alt="Schulz"></div>
+    <div class="brand"><img src="images/stanley.jpg" alt="Stanley"></div>
+    <div class="brand"><img src="images/starrett.jpg" alt="Starrett"></div>
+    <div class="brand"><img src="images/tekbond.jpg" alt="Tekbond"></div>
+    <div class="brand"><img src="images/tekna.jpg" alt="Tekna"></div>
+    <div class="brand"><img src="images/toyama.jpg" alt="Toyama"></div>
+    <div class="brand"><img src="images/tramontina.jpg" alt="Tramontina"></div>
+  </div>
+</div>
         <p class="brands-note">
           Consulte nossa equipe para verificar marcas, linhas de produtos e disponibilidade.
         </p>
@@ -1393,6 +1426,23 @@
       showSupplier((supplierIndex + 1) % supplierSlides.length);
     }, 7000);
 
+    // Carrossel automático de marcas
+    const brandPages = document.querySelectorAll(".brand-page");
+    let brandPageIndex = 0;
+
+    function showBrandPage(index) {
+      brandPages.forEach(function (page, i) {
+        page.classList.toggle("active", i === index);
+      });
+
+      brandPageIndex = index;
+    }
+
+    if (brandPages.length > 1) {
+      setInterval(function () {
+        showBrandPage((brandPageIndex + 1) % brandPages.length);
+      }, 5000);
+    }
     // Ano automático no rodapé
     document.getElementById("currentYear").textContent =
       new Date().getFullYear();
