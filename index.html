@@ -439,7 +439,7 @@
     }
 
     .hero-benefits span::before {
-      content: "✓";
+      content: "
       display: inline-flex;
       width: 20px;
       height: 20px;
@@ -560,105 +560,63 @@
       line-height: 1.5;
     }
 
-    /* ========================================
-       6. CATEGORIAS
-    ======================================== */
+    <!-- ======================================
+     OFERTAS COMASP
+    ======================================= -->
 
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
+    section class="categories-section offers-section" id="ofertas">
+  <div class="container">
 
-    .category-card {
-      position: relative;
-      min-height: 255px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 27px;
-      overflow: hidden;
-      color: var(--white);
-      background: var(--dark-2);
-      border-radius: var(--radius);
-      isolation: isolate;
-      box-shadow: var(--shadow);
-    }
+    <div class="section-heading">
+      <span class="section-label">COMASP FERRAMENTAS</span>
+      <h2>Nossas ofertas</h2>
+      <p>
+        Confira alguns dos nossos produtos em destaque.
+        Entre em contato com nossa equipe e consulte as condições.
+      </p>
+    </div>
 
-    .category-card::before {
-      content: "";
-      position: absolute;
-      z-index: -2;
-      inset: 0;
-      background-image: var(--category-image);
-      background-position: center;
-      background-size: cover;
-      transition: transform 0.45s ease;
-    }
+    <div class="offers-carousel">
+      <button
+        type="button"
+        class="offers-arrow offers-prev"
+        id="offersPrev"
+        aria-label="Ver ofertas anteriores"
+      >&#10094;</button>
 
-    .category-card::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(12, 19, 26, 0.97) 0%,
-        rgba(12, 19, 26, 0.66) 48%,
-        rgba(12, 19, 26, 0.12) 100%
-      );
-    }
+      <div class="offers-viewport">
+        <div class="offers-track" id="offersTrack"></div>
+      </div>
 
-    .category-card:hover::before {
-      transform: scale(1.07);
-    }
+      <button
+        type="button"
+        class="offers-arrow offers-next"
+        id="offersNext"
+        aria-label="Ver próximas ofertas"
+      >&#10095;</button>
+    </div>
 
-    .category-number {
-      position: absolute;
-      top: 19px;
-      left: 23px;
-      color: rgba(255, 255, 255, 0.78);
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+    <div class="offers-pagination">
+      <span id="offersPage">01 / 05</span>
+      <div class="offers-progress">
+        <div id="offersProgress"></div>
+      </div>
+    </div>
 
-    .category-card h3 {
-      margin-bottom: 8px;
-      font-family: "Barlow Condensed", sans-serif;
-      font-size: 29px;
-      font-weight: 800;
-      line-height: 1.05;
-      text-transform: uppercase;
-    }
+    <div class="offers-contact">
+      <a
+        href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20ofertas%20da%20Comasp."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fale com a Comasp pelo WhatsApp
+      </a>
+    </div>
 
-    .category-card p {
-      max-width: 330px;
-      margin-bottom: 16px;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    .category-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #ff9c69;
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .category-link span {
-      transition: transform 0.2s ease;
-    }
-
-    .category-card:hover .category-link span {
-      transform: translateX(5px);
-    }
-
+  </div>
+</section>
+    
+    
     /* ========================================
        7. SOBRE A COMASP
     ======================================== */
@@ -1465,6 +1423,388 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* OFERTAS COMASP */
+
+.offers-section {
+  padding: 75px 0;
+  background: #f5f6f8;
+  scroll-margin-top: 90px;
+}
+
+.offers-section .container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+.offers-section .section-heading {
+  max-width: 720px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.offers-section .section-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #e87516;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.offers-section .section-heading h2 {
+  margin: 0 0 12px;
+  color: #17212b;
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.offers-section .section-heading p {
+  color: #66717d;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Carrossel */
+
+.offers-carousel {
+  position: relative;
+  padding: 0 48px;
+}
+
+.offers-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.offers-track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.offer-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* Cards */
+
+.offer-card {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6e9ed;
+  border-radius: 9px;
+  box-shadow: 0 4px 16px rgba(20, 30, 40, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(20, 30, 40, 0.1);
+}
+
+.offer-image {
+  height: 175px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.offer-image.image-placeholder {
+  background: #eef1f4;
+}
+
+.offer-image.image-placeholder::after {
+  content: "Foto do produto";
+  color: #7b8490;
+  font-size: 13px;
+}
+
+.offer-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+}
+
+.offer-category {
+  margin-bottom: 7px;
+  color: #e87516;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.offer-info h3 {
+  margin: 0 0 9px;
+  color: #17212b;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.offer-info p {
+  margin: 0 0 17px;
+  color: #697480;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.offer-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 11px 10px;
+  border-radius: 5px;
+  background: #e87516;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.offer-button:hover {
+  background: #c95e08;
+  color: #fff;
+}
+
+/* Setas */
+
+.offers-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #e87516;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  transition: background 0.2s ease;
+}
+
+.offers-arrow:hover {
+  background: #c95e08;
+}
+
+.offers-prev {
+  left: 0;
+}
+
+.offers-next {
+  right: 0;
+}
+
+/* Paginação */
+
+.offers-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+#offersPage {
+  color: #4e5965;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.offers-progress {
+  width: 130px;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #dce0e4;
+}
+
+#offersProgress {
+  width: 20%;
+  height: 100%;
+  background: #e87516;
+  transition: width 0.35s ease;
+}
+
+/* Botão geral de contato */
+
+.offers-contact {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.offers-contact a {
+  display: inline-flex;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 5px;
+  background: #1b8050;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.offers-contact a:hover {
+  background: #14683f;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+  .offers-carousel {
+    padding: 0 38px;
+  }
+
+  .offer-slide {
+    gap: 14px;
+  }
+
+  .offer-image {
+    height: 145px;
+  }
+
+  .offer-info {
+    padding: 12px;
+  }
+
+  .offer-info h3 {
+    font-size: 14px;
+  }
+
+  .offer-button {
+    font-size: 11px;
+  }
+}
+
+/* Celulares: seis produtos por página, em duas colunas */
+
+@media (max-width: 560px) {
+  .offers-section {
+    padding: 55px 0;
+  }
+
+  .offers-carousel {
+    padding: 0 30px;
+  }
+
+  .offer-slide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, auto);
+    gap: 12px;
+  }
+
+  .offers-arrow {
+    width: 29px;
+    height: 29px;
+    font-size: 12px;
+  }
+
+  .offer-image {
+    height: 110px;
+    padding: 7px;
+  }
+
+  .offer-info {
+    padding: 10px;
+  }
+
+  .offer-category {
+    font-size: 9px;
+  }
+
+  .offer-info h3 {
+    font-size: 12px;
+  }
+
+  .offer-info p {
+    font-size: 11px;
+  }
+
+  .offer-button {
+    padding: 10px 5px;
+    font-size: 10px;
+  }
+
+  .offers-contact a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+  .offer-pricing {
+  min-height: 68px;
+  margin: 0 0 16px;
+}
+
+.offer-cash-label {
+  display: block;
+  color: #687380;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.offer-cash {
+  color: #e87516;
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.offer-installments {
+  color: #26313c;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.offer-price-empty {
+  display: flex;
+  align-items: center;
+  color: #687380;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .offer-cash {
+    font-size: 18px;
+  }
+
+  .offer-installments {
+    font-size: 11px;
+  }
+}
+    
   </style>
 </head>
 
@@ -1503,7 +1843,7 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
-        <a href="#categorias">Categorias</a>
+        <a href="#categorias">Ofertas</a>
         <a href="#sobre">A Comasp</a>
         <a href="#marcas">Marcas</a>
         <a href="#catalogo">Atendimento</a>
@@ -2282,6 +2622,194 @@
     });
 
     startSlideTimer();
+
+    
+(() => {
+  const track = document.getElementById("offersTrack");
+
+  if (!track || track.dataset.initialized === "true") return;
+  track.dataset.initialized = "true";
+
+  
+  // Cadastro das 30 ofertas — preencha os dados depois.
+  const ofertas = [
+  {
+    nome: "Esmerilhadeira Angular 4.1/2",
+    categoria: "Máquinas e ferramentas",
+    descricao: "Ferramenta para corte e desbaste.",
+    imagem: "images/oferta-1.webp",
+    precoVista: 299.90,
+    valorParcela: 79.98
+  },
+  {
+    nome: "Furadeira de Impacto",
+    categoria: "Máquinas e ferramentas",
+    descricao: "Consulte disponibilidade.",
+    imagem: "images/oferta-2.webp",
+    precoVista: 249.90,
+    valorParcela: 66.50
+  }
+];
+
+  const totalPorPagina = 6;
+  const totalPaginas = Math.ceil(ofertas.length / totalPorPagina);
+
+  let paginaAtual = 0;
+  let intervalo = null;
+
+  const paginaTexto = document.getElementById("offersPage");
+  const progresso = document.getElementById("offersProgress");
+  const anterior = document.getElementById("offersPrev");
+  const proxima = document.getElementById("offersNext");
+  const carrossel = track.closest(".offers-carousel");
+
+  function criarCard(produto, indice) {
+    const nomeSeguro = produto.nome;
+    const mensagem = encodeURIComponent(
+      `Olá! Gostaria de consultar o preço e a disponibilidade de ${nomeSeguro} na Comasp.`
+    );
+
+    const card = document.createElement("article");
+    card.className = "offer-card";
+
+    const imagemBox = document.createElement("div");
+    imagemBox.className = "offer-image";
+
+    const img = document.createElement("img");
+    img.src = produto.imagem;
+    img.alt = produto.nome;
+    img.loading = "lazy";
+
+    img.addEventListener("error", () => {
+      img.remove();
+      imagemBox.classList.add("image-placeholder");
+    }, { once: true });
+
+    imagemBox.appendChild(img);
+
+    const info = document.createElement("div");
+    info.className = "offer-info";
+
+    const categoria = document.createElement("span");
+    categoria.className = "offer-category";
+    categoria.textContent = produto.categoria;
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = produto.nome;
+
+    const descricao = document.createElement("p");
+    descricao.textContent = produto.descricao;
+
+    const precos = document.createElement("div");
+precos.className = "offer-pricing";
+
+if (produto.precoVista > 0 && produto.valorParcela > 0) {
+  const rotulo = document.createElement("span");
+  rotulo.className = "offer-cash-label";
+  rotulo.textContent = "À vista";
+
+  const vista = document.createElement("div");
+  vista.className = "offer-cash";
+  vista.textContent = produto.precoVista.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
+  const parcela = document.createElement("div");
+  parcela.className = "offer-installments";
+  parcela.textContent = "ou 4x de " +
+    produto.valorParcela.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    });
+
+  precos.append(rotulo, vista, parcela);
+} else {
+  precos.classList.add("offer-price-empty");
+  precos.textContent = "Consulte o preço";
+}
+    
+    const botao = document.createElement("a");
+    botao.className = "offer-button";
+    botao.href = `https://wa.me/556299037054?text=${mensagem}`;
+    botao.target = "_blank";
+    botao.rel = "noopener noreferrer";
+    botao.textContent = "Consultar pelo WhatsApp";
+    botao.setAttribute(
+      "aria-label",
+      `Consultar ${produto.nome} pelo WhatsApp`
+    );
+
+    info.append(categoria, titulo, descricao, precos, botao);
+    card.append(imagemBox, info);
+
+    return card;
+  }
+
+  for (let i = 0; i < totalPaginas; i++) {
+    const slide = document.createElement("div");
+    slide.className = "offer-slide";
+
+    ofertas
+      .slice(i * totalPorPagina, (i + 1) * totalPorPagina)
+      .forEach((produto, j) => {
+        slide.appendChild(criarCard(produto, i * totalPorPagina + j));
+      });
+
+    track.appendChild(slide);
+  }
+
+  function mostrarPagina(novaPagina) {
+    paginaAtual = (novaPagina + totalPaginas) % totalPaginas;
+
+    track.style.transform = `translateX(-${paginaAtual * 100}%)`;
+
+    if (paginaTexto) {
+      paginaTexto.textContent =
+        `${String(paginaAtual + 1).padStart(2, "0")} / ` +
+        `${String(totalPaginas).padStart(2, "0")}`;
+    }
+
+    if (progresso) {
+      progresso.style.width =
+        `${((paginaAtual + 1) / totalPaginas) * 100}%`;
+    }
+  }
+
+  function pararRotacao() {
+    if (intervalo !== null) {
+      clearInterval(intervalo);
+      intervalo = null;
+    }
+  }
+
+  function iniciarRotacao() {
+    pararRotacao();
+    intervalo = setInterval(() => {
+      mostrarPagina(paginaAtual + 1);
+    }, 6000);
+  }
+
+  anterior?.addEventListener("click", () => {
+    mostrarPagina(paginaAtual - 1);
+    iniciarRotacao();
+  });
+
+  proxima?.addEventListener("click", () => {
+    mostrarPagina(paginaAtual + 1);
+    iniciarRotacao();
+  });
+
+  // Pausa a troca automática quando o visitante interage.
+  carrossel?.addEventListener("mouseenter", pararRotacao);
+  carrossel?.addEventListener("mouseleave", iniciarRotacao);
+  carrossel?.addEventListener("focusin", pararRotacao);
+  carrossel?.addEventListener("focusout", iniciarRotacao);
+
+  mostrarPagina(0);
+  iniciarRotacao();
+})();
+
   </script>
 
 </body>
