@@ -1487,9 +1487,9 @@
   flex: 0 0 100%;
   min-width: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: 1fr;
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -1682,7 +1682,8 @@
 
 @media (max-width: 900px) {
   .offers-carousel {
-    padding: 0 38px;
+    position: relative;
+    padding: 0 40px;
   }
 
   .offer-slide {
