@@ -312,44 +312,46 @@
       background: var(--dark);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      z-index: -2;
-      inset: 0;
-      background-image: url("images/hero-soldagem.webp");
-      background-position: center 48%;
-      background-size: cover;
-      transform: scale(1.01);
-      transition: opacity 0.5s ease;
-    }
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    background-image: url("images/hero-soldagem.webp");
+    background-position: 72% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.01);
+    transition: opacity 0.5s ease;
+  }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(12, 19, 26, 0.95) 0%,
-          rgba(12, 19, 26, 0.83) 37%,
-          rgba(12, 19, 26, 0.46) 68%,
-          rgba(12, 19, 26, 0.24) 100%
-        ),
-        linear-gradient(
-          0deg,
-          rgba(12, 19, 26, 0.34),
-          transparent 55%
-        );
-    }
+  .hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(12, 19, 26, 0.97) 0%,
+        rgba(12, 19, 26, 0.90) 30%,
+        rgba(12, 19, 26, 0.68) 50%,
+        rgba(12, 19, 26, 0.20) 78%,
+        rgba(12, 19, 26, 0.10) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(12, 19, 26, 0.35),
+        transparent 55%
+      );
+  }
 
     .hero.hero-bg-1::before {
-      background-image: url("images/hero-soldagem.webp");
+      background-image: url("images/hero-soldagem.jpg");
     }
 
     .hero.hero-bg-2::before {
-      background-image: url("images/hero-ferramentas.webp");
+      background-image: url("images/hero-ferramentas.jpg");
     }
 
     .hero.hero-bg-3::before {
@@ -439,7 +441,7 @@
     }
 
     .hero-benefits span::before {
-      content: "
+      content: "";
       display: inline-flex;
       width: 20px;
       height: 20px;
@@ -1269,7 +1271,7 @@
       }
 
       .hero::before {
-        background-position: 60% center;
+        background-position: 70% center;
       }
 
       .hero::after {
