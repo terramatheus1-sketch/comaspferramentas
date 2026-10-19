@@ -724,6 +724,58 @@
       text-align: center;
     }
 
+    /* Carrossel automático das marcas fornecedoras */
+    .brand-page {
+      display: none;
+    }
+
+    .brand-page.active {
+      display: block;
+      animation: brandsFadeIn 0.45s ease;
+    }
+
+    @keyframes brandsFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .brands-carousel-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .brands-page-btn {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--dark);
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .brands-page-btn[aria-current="true"] {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+
+    .brands-page-status {
+      margin-left: 7px;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand-page.active { animation: none; }
+    }
+
     /* ========================================
        9. CATÁLOGO / ATENDIMENTO
     ======================================== */
@@ -2081,61 +2133,64 @@
           </p>
         </div>
 
-        <div class="brands-grid">
-
-          <div class="brand-card">
-            <img src="images/marcon.jpg" alt="Marcon" loading="lazy">
+        <div class="brand-page active" data-brand-page="1" aria-hidden="false">
+          <div class="brands-grid">
+            <div class="brand-card"><img src="images/belenus.jpg" alt="Belenus" loading="lazy"></div>
+            <div class="brand-card"><img src="images/bosch.jpg" alt="Bosch" loading="lazy"></div>
+            <div class="brand-card"><img src="images/branco.jpg" alt="Branco" loading="lazy"></div>
+            <div class="brand-card"><img src="images/ciser.jpg" alt="Ciser" loading="lazy"></div>
+            <div class="brand-card"><img src="images/dewalt.jpg" alt="DeWalt" loading="lazy"></div>
+            <div class="brand-card"><img src="images/esab.jpg" alt="ESAB" loading="lazy"></div>
+            <div class="brand-card"><img src="images/gedore.jpg" alt="Gedore" loading="lazy"></div>
+            <div class="brand-card"><img src="images/jacto.jpg" alt="Jacto" loading="lazy"></div>
+            <div class="brand-card"><img src="images/karcher.jpg" alt="Kärcher" loading="lazy"></div>
+            <div class="brand-card"><img src="images/lufkin.jpg" alt="Lufkin" loading="lazy"></div>
+            <div class="brand-card"><img src="images/lynus.jpg" alt="Lynus" loading="lazy"></div>
+            <div class="brand-card"><img src="images/makita.jpg" alt="Makita" loading="lazy"></div>
           </div>
-
-          <div class="brand-card">
-            <img src="images/minipa.jpg" alt="Minipa" loading="lazy">
+        </div>
+        <div class="brand-page" data-brand-page="2" aria-hidden="true">
+          <div class="brands-grid">
+            <div class="brand-card"><img src="images/marcon.jpg" alt="Marcon" loading="lazy"></div>
+            <div class="brand-card"><img src="images/minipa.jpg" alt="Minipa" loading="lazy"></div>
+            <div class="brand-card"><img src="images/orbi.jpg" alt="Orbi" loading="lazy"></div>
+            <div class="brand-card"><img src="images/pdr.jpg" alt="PDR" loading="lazy"></div>
+            <div class="brand-card"><img src="images/robust.jpg" alt="Robust" loading="lazy"></div>
+            <div class="brand-card"><img src="images/sata.jpg" alt="SATA" loading="lazy"></div>
+            <div class="brand-card"><img src="images/schulz.jpg" alt="Schulz" loading="lazy"></div>
+            <div class="brand-card"><img src="images/stanley.jpg" alt="Stanley" loading="lazy"></div>
+            <div class="brand-card"><img src="images/starret.jpg" alt="Starrett" loading="lazy"></div>
+            <div class="brand-card"><img src="images/tekbond.jpg" alt="Tekbond" loading="lazy"></div>
+            <div class="brand-card"><img src="images/tekna.jpg" alt="Tekna" loading="lazy"></div>
+            <div class="brand-card"><img src="images/toyama.jpg" alt="Toyama" loading="lazy"></div>
           </div>
-
-          <div class="brand-card">
-            <img src="images/orbi.jpg" alt="Orbi" loading="lazy">
+        </div>
+        <div class="brand-page" data-brand-page="3" aria-hidden="true">
+          <div class="brands-grid">
+            <div class="brand-card"><img src="images/tramontina.jpg" alt="Tramontina" loading="lazy"></div>
+            <div class="brand-card"><img src="images/tyrolit.jpg" alt="Tyrolit" loading="lazy"></div>
+            <div class="brand-card"><img src="images/wap.jpg" alt="WAP" loading="lazy"></div>
+            <div class="brand-card"><img src="images/wesco.jpg" alt="Wesco" loading="lazy"></div>
+            <div class="brand-card"><img src="images/CONDOR.JPG" alt="Condor" loading="lazy"></div>
+            <div class="brand-card"><img src="images/NORTON.JPG" alt="Norton" loading="lazy"></div>
+            <div class="brand-card"><img src="images/PRESSURE.JPG" alt="Pressure" loading="lazy"></div>
+            <div class="brand-card"><img src="images/BLACK%20DECKER.JPG" alt="Black+Decker" loading="lazy"></div>
+            <div class="brand-card"><img src="images/3M.JPG" alt="3M" loading="lazy"></div>
+            <div class="brand-card"><img src="images/RAVEN.JPG" alt="Raven" loading="lazy"></div>
+            <div class="brand-card"><img src="images/CIMAF.JPG" alt="Cimaf" loading="lazy"></div>
+            <div class="brand-card"><img src="images/balmer.JPG" alt="Balmer" loading="lazy"></div>
           </div>
+        </div>
 
-          <div class="brand-card">
-            <img src="images/pdr.jpg" alt="PDR" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/sata.jpg" alt="SATA" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/schulz.jpg" alt="Schulz" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/stanley.jpg" alt="Stanley" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/starret.jpg" alt="Starrett" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/tekbond.jpg" alt="Tekbond" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/tekna.jpg" alt="Tekna" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/toyama.jpg" alt="Toyama" loading="lazy">
-          </div>
-
-          <div class="brand-card">
-            <img src="images/tramontina.jpg" alt="Tramontina" loading="lazy">
-          </div>
-
+        <div class="brands-carousel-controls" aria-label="Navegação das páginas de marcas">
+          <button type="button" class="brands-page-btn" data-brand-target="0" aria-label="Mostrar primeira página" aria-current="true">1</button>
+          <button type="button" class="brands-page-btn" data-brand-target="1" aria-label="Mostrar segunda página" aria-current="false">2</button>
+          <button type="button" class="brands-page-btn" data-brand-target="2" aria-label="Mostrar terceira página" aria-current="false">3</button>
+          <span class="brands-page-status" aria-live="polite">Página 1 de 3</span>
         </div>
 
         <p class="brands-note">
-          Consulte nossa equipe para confirmar marcas, modelos e
-          disponibilidade dos produtos desejados.
+          Consulte nossa equipe para confirmar marcas, modelos e disponibilidade dos produtos desejados.
         </p>
 
       </div>
@@ -2692,6 +2747,63 @@ if (produto.precoVista > 0 && produto.valorParcela > 0) {
   iniciarRotacao();
 })();
 
+
+
+    // Carrossel das marcas: troca a página a cada 3 segundos.
+    (() => {
+      const brandPages = Array.from(document.querySelectorAll("#marcas .brand-page"));
+      const brandButtons = Array.from(document.querySelectorAll("#marcas .brands-page-btn"));
+      const brandStatus = document.querySelector("#marcas .brands-page-status");
+      const brandCarousel = document.querySelector("#marcas");
+      if (brandPages.length <= 1) return;
+
+      let currentBrandPage = 0;
+      let brandTimer = null;
+
+      function showBrandPage(index) {
+        currentBrandPage = (index + brandPages.length) % brandPages.length;
+        brandPages.forEach((page, i) => {
+          const active = i === currentBrandPage;
+          page.classList.toggle("active", active);
+          page.setAttribute("aria-hidden", String(!active));
+        });
+        brandButtons.forEach((button, i) => {
+          button.setAttribute("aria-current", String(i === currentBrandPage));
+        });
+        if (brandStatus) {
+          brandStatus.textContent = `Página ${currentBrandPage + 1} de ${brandPages.length}`;
+        }
+      }
+
+      function stopBrandTimer() {
+        if (brandTimer !== null) {
+          clearInterval(brandTimer);
+          brandTimer = null;
+        }
+      }
+
+      function startBrandTimer() {
+        stopBrandTimer();
+        brandTimer = setInterval(() => showBrandPage(currentBrandPage + 1), 3000);
+      }
+
+      brandButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          showBrandPage(Number(button.dataset.brandTarget));
+          startBrandTimer();
+        });
+      });
+
+      brandCarousel.addEventListener("mouseenter", stopBrandTimer);
+      brandCarousel.addEventListener("mouseleave", startBrandTimer);
+      brandCarousel.addEventListener("focusin", stopBrandTimer);
+      brandCarousel.addEventListener("focusout", (event) => {
+        if (!brandCarousel.contains(event.relatedTarget)) startBrandTimer();
+      });
+
+      showBrandPage(0);
+      startBrandTimer();
+    })();
   </script>
 
 </body>
