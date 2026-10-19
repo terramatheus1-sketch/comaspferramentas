@@ -317,7 +317,7 @@
       position: absolute;
       z-index: -2;
       inset: 0;
-      background-image: url("images/hero-soldagem.jpg");
+      background-image: url("images/hero-soldagem.webp");
       background-position: center 48%;
       background-size: cover;
       transform: scale(1.01);
@@ -560,61 +560,9 @@
       line-height: 1.5;
     }
 
-    <!-- ======================================
-     OFERTAS COMASP
-    ======================================= -->
+    /* A seção HTML de ofertas fica dentro do body, não dentro do style. */
 
-    section class="categories-section offers-section" id="ofertas">
-  <div class="container">
 
-    <div class="section-heading">
-      <span class="section-label">COMASP FERRAMENTAS</span>
-      <h2>Nossas ofertas</h2>
-      <p>
-        Confira alguns dos nossos produtos em destaque.
-        Entre em contato com nossa equipe e consulte as condições.
-      </p>
-    </div>
-
-    <div class="offers-carousel">
-      <button
-        type="button"
-        class="offers-arrow offers-prev"
-        id="offersPrev"
-        aria-label="Ver ofertas anteriores"
-      >&#10094;</button>
-
-      <div class="offers-viewport">
-        <div class="offers-track" id="offersTrack"></div>
-      </div>
-
-      <button
-        type="button"
-        class="offers-arrow offers-next"
-        id="offersNext"
-        aria-label="Ver próximas ofertas"
-      >&#10095;</button>
-    </div>
-
-    <div class="offers-pagination">
-      <span id="offersPage">01 / 05</span>
-      <div class="offers-progress">
-        <div id="offersProgress"></div>
-      </div>
-    </div>
-
-    <div class="offers-contact">
-      <a
-        href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20as%20ofertas%20da%20Comasp."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Fale com a Comasp pelo WhatsApp
-      </a>
-    </div>
-
-  </div>
-</section>
     
     
     /* ========================================
@@ -1843,7 +1791,7 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
-        <a href="#categorias">Ofertas</a>
+        <a href="#ofertas">Ofertas</a>
         <a href="#sobre">A Comasp</a>
         <a href="#marcas">Marcas</a>
         <a href="#catalogo">Atendimento</a>
@@ -1889,7 +1837,7 @@
               Consulte nossa equipe <span aria-hidden="true">↗</span>
             </a>
 
-            <a class="btn btn-outline" href="#categorias">
+            <a class="btn btn-outline" href="#ofertas">
               Conheça nossas categorias
             </a>
           </div>
@@ -1972,126 +1920,60 @@
     </section>
 
 
+    <!-- OFERTAS COMASP -->
+
+    <!-- ======================================
+     OFERTAS COMASP
+    ======================================= -->
+
+    <section class="categories-section offers-section" id="ofertas">
+  <div class="container">
+
+    <div class="section-heading">
+      <span class="section-label">COMASP FERRAMENTAS</span>
+      <h2>Nossas ofertas</h2>
+      <p>
+        Confira alguns dos nossos produtos em destaque.
+        Entre em contato com nossa equipe e consulte as condições.
+      </p>
+    </div>
+
+    <div class="offers-carousel">
+      <button
+        type="button"
+        class="offers-arrow offers-prev"
+        id="offersPrev"
+        aria-label="Ver ofertas anteriores"
+      >&#10094;</button>
+
+      <div class="offers-viewport">
+        <div class="offers-track" id="offersTrack"></div>
+      </div>
+
+      <button
+        type="button"
+        class="offers-arrow offers-next"
+        id="offersNext"
+        aria-label="Ver próximas ofertas"
+      >&#10095;</button>
+    </div>
+
+    <div class="offers-pagination">
+      <span id="offersPage">01 / 05</span>
+      <div class="offers-progress">
+        <div id="offersProgress"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
     <!-- ======================================
          CATEGORIAS
     ======================================= -->
 
-    <section class="section" id="categorias">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">Nosso portfólio</span>
-          <h2>
-            Tudo para o seu
-            <span class="text-orange">trabalho render mais</span>
-          </h2>
-          <p>
-            Explore algumas das principais áreas de aplicação e consulte
-            nossa equipe para encontrar os produtos adequados ao seu projeto.
-          </p>
-        </div>
-
-        <div class="categories-grid">
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20ferramentas%20el%C3%A9tricas."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-ferramentas.webp');"
-          >
-            <span class="category-number">01 / FERRAMENTAS</span>
-            <h3>Ferramentas elétricas</h3>
-            <p>
-              Consulte opções para corte, perfuração, acabamento e
-              diferentes aplicações profissionais.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20ferramentas%20manuais."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-oficina.webp');"
-          >
-            <span class="category-number">02 / PRECISÃO</span>
-            <h3>Ferramentas manuais</h3>
-            <p>
-              Soluções para montagem, manutenção, reparos e atividades
-              do dia a dia.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20produtos%20para%20soldagem."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-soldagem.webp');"
-          >
-            <span class="category-number">03 / METALURGIA</span>
-            <h3>Soldagem</h3>
-            <p>
-              Consulte equipamentos e soluções para aplicações de
-              soldagem e trabalhos com metais.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20abrasivos%20e%20discos."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-manutencao.webp');"
-          >
-            <span class="category-number">04 / ACABAMENTO</span>
-            <h3>Abrasivos</h3>
-            <p>
-              Alternativas para desbaste, corte, lixamento e acabamento
-              de diferentes materiais.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20fixadores%20e%20parafusos."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-construcao.webp');"
-          >
-            <span class="category-number">05 / FIXAÇÃO</span>
-            <h3>Parafusos e fixadores</h3>
-            <p>
-              Consulte opções de fixação para montagem, manutenção
-              e aplicações diversas.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-          <a
-            class="category-card"
-            href="https://wa.me/556299037054?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20equipamentos%20para%20oficina%20e%20manuten%C3%A7%C3%A3o."
-            target="_blank"
-            rel="noopener noreferrer"
-            style="--category-image: url('images/hero-oficina.webp');"
-          >
-            <span class="category-number">06 / EQUIPAMENTOS</span>
-            <h3>Oficina e manutenção</h3>
-            <p>
-              Consulte soluções para oficinas, equipes de manutenção
-              e ambientes de trabalho.
-            </p>
-            <span class="category-link">Consultar produtos <span>→</span></span>
-          </a>
-
-        </div>
-      </div>
-    </section>
+    
 
 
     <!-- ======================================
