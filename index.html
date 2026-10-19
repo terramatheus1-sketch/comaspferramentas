@@ -2587,7 +2587,7 @@
     vezes: 4
   },
     {
-    nome: "Botina Segurança Bico Pvc Vulcaflex Marluvas 10vb48",
+    nome: "Botina Segurança Bico PVC Vulcaflex Marluvas 10VB48",
     categoria: "EPI'S",
     imagem: "images/BOTINA VULCAFLEX PT 10VB CAU43377.jpg",
     precoVista: 69.00
@@ -2644,33 +2644,38 @@
     descricao.textContent = produto.descricao;
 
     const precos = document.createElement("div");
-precos.className = "offer-pricing";
+    precos.className = "offer-pricing";
 
-if (produto.precoVista > 0 && produto.valorParcela > 0) {
-  const rotulo = document.createElement("span");
-  rotulo.className = "offer-cash-label";
-  rotulo.textContent = "À vista";
+    if (produto.precoVista > 0) {
+      const rotulo = document.createElement("span");
+      rotulo.className = "offer-cash-label";
+      rotulo.textContent = "À vista";
 
-  const vista = document.createElement("div");
-  vista.className = "offer-cash";
-  vista.textContent = produto.precoVista.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
+      const vista = document.createElement("div");
+      vista.className = "offer-cash";
+      vista.textContent = produto.precoVista.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
 
-  const parcela = document.createElement("div");
-  parcela.className = "offer-installments";
-  parcela.textContent = "ou 4x de " +
-    produto.valorParcela.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
-    });
+      precos.append(rotulo, vista);
 
-  precos.append(rotulo, vista, parcela);
-} else {
-  precos.classList.add("offer-price-empty");
-  precos.textContent = "Consulte o preço";
-}
+      if (produto.valorParcela > 0 && produto.vezes > 0) {
+        const parcela = document.createElement("div");
+        parcela.className = "offer-installments";
+        parcela.textContent =
+          `ou ${produto.vezes}x de ` +
+          produto.valorParcela.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+          });
+
+        precos.appendChild(parcela);
+      }
+    } else {
+      precos.classList.add("offer-price-empty");
+      precos.textContent = "Consulte o preço";
+    }
     
     const botao = document.createElement("a");
     botao.className = "offer-button";
