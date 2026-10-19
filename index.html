@@ -1433,7 +1433,8 @@
 }
 
 .offers-section .container {
-  width: min(1180px, 92%);
+  width: calc(100% - 32px);
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -1468,7 +1469,10 @@
 
 .offers-carousel {
   position: relative;
-  padding: 0 48px;
+  width: 100%;
+  max-width: none;
+  padding: 0 36px;
+  box-sizing: border-box;
 }
 
 .offers-viewport {
@@ -1479,18 +1483,21 @@
 .offers-track {
   display: flex;
   align-items: stretch;
+  width: 100%;
   transition: transform 0.55s ease;
   will-change: transform;
 }
 
 .offer-slide {
   flex: 0 0 100%;
+  width: 100%;
   min-width: 0;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-rows: 1fr;
-  gap: 20px;
+  grid-template-rows: auto;
+  gap: 16px;
   align-items: stretch;
+  box-sizing: border-box;
 }
 
 /* Cards */
@@ -1513,8 +1520,8 @@
 }
 
 .offer-image {
-  height: 175px;
-  padding: 12px;
+  height: 210px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1528,25 +1535,17 @@
   object-fit: contain;
 }
 
-.offer-image.image-placeholder {
-  background: #eef1f4;
-}
-
-.offer-image.image-placeholder::after {
-  content: "Foto do produto";
-  color: #7b8490;
-  font-size: 13px;
-}
-
 .offer-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px;
+  padding: 18px;
 }
 
+/* Mantém o texto da categoria acima do nome do produto */
 .offer-category {
+  display: block;
   margin-bottom: 7px;
   color: #e87516;
   font-size: 11px;
@@ -1556,10 +1555,10 @@
 }
 
 .offer-info h3 {
-  margin: 0 0 9px;
+  margin: 0 0 12px;
   color: #17212b;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .offer-info p {
@@ -1568,7 +1567,6 @@
   font-size: 13px;
   line-height: 1.55;
 }
-
 .offer-button {
   display: inline-flex;
   justify-content: center;
@@ -2603,7 +2601,7 @@
   },
 ];
 
-  const totalPorPagina = 6;
+  const totalPorPagina = 5;
   const totalPaginas = Math.ceil(ofertas.length / totalPorPagina);
 
   let paginaAtual = 0;
