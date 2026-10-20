@@ -1804,6 +1804,26 @@
     font-size: 11px;
   }
 }
+
+    .about-visual.about-video {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 567 / 440;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #19232d;
+  box-shadow: 0 15px 35px rgba(20, 30, 40, 0.10);
+}
+
+.about-visual.about-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: inherit;
+}
     
   </style>
 </head>
@@ -2035,18 +2055,17 @@
     <section class="section section-light" id="sobre">
       <div class="container about-grid">
 
-        <div class="about-visual">
-          <img
-            src="images/hero-oficina.webp"
-            alt="Ambiente de trabalho com ferramentas e equipamentos"
-            loading="lazy"
-          >
+        
+    <div class="about-visual about-video">
+      <iframe
+        src="https://drive.google.com/file/d/1ml8rWjJDJjAE8TpkB3o7PWyDNhmFUj3y/preview"
+        title="Vídeo institucional da Comasp Ferramentas"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
 
-          <div class="about-badge">
-            <strong>Seu trabalho merece boas ferramentas.</strong>
-            <span>Conte com nossa equipe para encontrar soluções para sua necessidade.</span>
-          </div>
-        </div>
 
         <div class="about-content">
           <span class="eyebrow">Conheça a Comasp</span>
