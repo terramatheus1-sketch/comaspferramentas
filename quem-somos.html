@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a Comasp Ferramentas: soluções em ferramentas, parafusos, máquinas e EPIs para profissionais e indústrias em Goiânia.">
+  <title>Quem Somos | Comasp Ferramentas</title>
+  <style>
+    :root {
+      --orange: #f15a0a;
+      --orange-dark: #d94b00;
+      --charcoal: #292929;
+      --dark: #171717;
+      --text: #292929;
+      --muted: #666;
+      --light: #f5f5f5;
+      --white: #fff;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); line-height: 1.65; background: #fff; }
+    a { color: inherit; }
+    .topbar { background: var(--dark); color: #fff; border-bottom: 4px solid var(--orange); }
+    .nav { max-width: var(--max); margin: auto; padding: 12px 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: .4px; }
+    .brand img { width: 54px; height: 54px; object-fit: cover; object-position: center; border-radius: 8px; }
+    .brand span { line-height: 1.1; }
+    .brand small { display: block; color: var(--orange); font-size: 11px; letter-spacing: 1.4px; margin-top: 5px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; align-items: center; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: #ff8b4a; }
+    .nav-links .nav-cta { background: var(--orange); padding: 10px 15px; border-radius: 5px; }
+    .nav-links .nav-cta:hover { color: #fff; background: var(--orange-dark); }
+    .hero { min-height: 500px; display: grid; grid-template-columns: 1.08fr .92fr; background: var(--charcoal); color: #fff; }
+    .hero-photo { min-height: 500px; background: linear-gradient(90deg, rgba(0,0,0,.05), rgba(0,0,0,.16)), url('images/comasp-hero.jpg') center 38%/cover no-repeat; }
+    .hero-content { display: flex; flex-direction: column; justify-content: center; padding: 60px clamp(28px, 6vw, 90px); position: relative; overflow: hidden; }
+    .hero-content:after { content: ""; position: absolute; width: 240px; height: 240px; border: 26px solid rgba(241,90,10,.16); border-radius: 50%; right: -105px; bottom: -110px; }
+    .eyebrow { color: var(--orange); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+    h1 { font-size: clamp(36px, 4.4vw, 58px); line-height: 1.08; margin: 12px 0 22px; }
+    h1 span { color: var(--orange); }
+    .hero p { color: #e6e6e6; max-width: 560px; font-size: 17px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 800; padding: 12px 18px; border-radius: 5px; border: 2px solid var(--orange); transition: .2s; }
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { background: var(--orange-dark); border-color: var(--orange-dark); }
+    .btn-outline { color: #fff; }
+    .btn-outline:hover { background: var(--orange); }
+    .container { max-width: var(--max); margin: auto; padding: 76px 22px; }
+    .section-heading { max-width: 760px; margin-bottom: 34px; }
+    .section-heading h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.15; margin: 8px 0 12px; }
+    .section-heading p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-grid img { width: 100%; display: block; border-radius: 10px; box-shadow: 0 15px 35px rgba(0,0,0,.12); }
+    .about-copy p { color: #555; }
+    .orange-line { width: 64px; height: 5px; background: var(--orange); margin: 18px 0; border-radius: 3px; }
+    .values { background: var(--light); }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .value-card { background: #fff; border-radius: 9px; padding: 27px; border-top: 4px solid var(--orange); box-shadow: 0 7px 22px rgba(0,0,0,.05); }
+    .value-card .number { font-size: 13px; font-weight: 900; color: var(--orange); letter-spacing: 1.5px; }
+    .value-card h3 { margin: 8px 0; font-size: 21px; }
+    .value-card p { color: #666; font-size: 14px; margin-bottom: 0; }
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .product-card { padding: 24px 20px; background: #fff; border: 1px solid #e7e7e7; border-radius: 8px; }
+    .product-card .symbol { width: 44px; height: 44px; display: grid; place-items: center; background: #fff0e8; color: var(--orange); border-radius: 8px; font-size: 22px; font-weight: 900; }
+    .product-card h3 { margin: 15px 0 7px; font-size: 18px; }
+    .product-card p { color: #666; font-size: 14px; margin: 0; }
+    .solution { background: var(--charcoal); color: #fff; }
+    .solution-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+    .solution h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.15; margin: 8px 0 18px; }
+    .solution p { color: #ddd; }
+    .solution img { width: 100%; max-height: 370px; object-fit: cover; border-radius: 10px; }
+    .contact { background: var(--orange); color: #fff; }
+    .contact-inner { max-width: var(--max); margin: auto; padding: 48px 22px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .contact h2 { font-size: clamp(25px, 3vw, 36px); margin: 0 0 8px; }
+    .contact p { margin: 4px 0; }
+    .contact .btn { border-color: #fff; color: #fff; }
+    .contact .btn:hover { background: #fff; color: var(--orange-dark); }
+    footer { background: var(--dark); color: #bbb; padding: 24px 22px; font-size: 13px; }
+    .footer-inner { max-width: var(--max); margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { color: #fff; text-decoration: none; }
+    @media (max-width: 800px) {
+      .nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 14px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 310px; }
+      .hero-content { padding: 42px 24px 50px; }
+      .about-grid, .solution-grid { grid-template-columns: 1fr; gap: 28px; }
+      .values-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .nav-links a { font-size: 13px; }
+      .hero-photo { min-height: 250px; }
+      .container { padding: 54px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="index.html" aria-label="Comasp Ferramentas - página inicial">
+        <img src="images/logonovaComasp.png" alt="Logo Comasp Ferramentas">
+        <span>COMASP<small>FERRAMENTAS</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Início</a>
+        <a href="#quem-somos">Quem Somos</a>
+        <a href="#produtos">Produtos e serviços</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-cta" href="https://wa.me/5562990397054" target="_blank" rel="noopener">Fale conosco</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Profissional trabalhando com soldagem"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Sua força na manutenção</div>
+        <h1>Ferramentas para quem <span>faz acontecer.</span></h1>
+        <p>A Comasp Ferramentas é parceira de profissionais e indústrias, oferecendo soluções em ferramentas, parafusos e máquinas com foco em qualidade, confiança e produtividade.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#quem-somos">Conheça a Comasp</a>
+          <a class="btn btn-outline" href="https://wa.me/5562990397054" target="_blank" rel="noopener">Fale com nossa equipe</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="quem-somos">
+      <div class="about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">Quem somos</div>
+          <h2>Compromisso com qualidade. Parceria com quem constrói.</h2>
+          <div class="orange-line"></div>
+          <p>Forjados no compromisso e impulsionados pela qualidade, avançamos em uma trajetória marcada pelo crescimento e pela busca constante da excelência.</p>
+          <p>A Comasp Ferramentas consolidou-se como referência de confiança no fornecimento de ferramentas, parafusos e máquinas. Nosso trabalho é guiado pela dedicação à excelência, à precisão técnica e ao compromisso com clientes, parceiros e fornecedores.</p>
+          <p>Entendemos que cada peça, do menor fixador à máquina mais robusta, é fundamental para o sucesso dos projetos. Por isso, não entregamos apenas produtos: oferecemos a confiança necessária para construir e transformar.</p>
+          <p>Somos uma empresa jovem, com o propósito de ser parceira estratégica de quem faz acontecer.</p>
+        </div>
+        <img src="images/comasp-loja.jpg" alt="Imagens da estrutura e atuação da Comasp Ferramentas">
+      </div>
+    </section>
+
+    <section class="values">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Plataforma da marca</div>
+          <h2>O que orienta nosso trabalho</h2>
+          <p>Conhecimento técnico, parceria humana e compromisso com o ritmo de cada operação.</p>
+        </div>
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="number">01 / MISSÃO</div>
+            <h3>Soluções precisas</h3>
+            <p>Prover soluções em ferramentas, parafusos e máquinas, unindo conhecimento técnico e atendimento parceiro para transformar os projetos dos clientes em realidade e impulsionar a produtividade.</p>
+          </article>
+          <article class="value-card">
+            <div class="number">02 / VISÃO</div>
+            <h3>Ser referência</h3>
+            <p>Ser uma referência nacional em soluções para o setor MRO, reconhecida pela agilidade, inovação técnica e por apoiar profissionais e indústrias em sua jornada de crescimento.</p>
+          </article>
+          <article class="value-card">
+            <div class="number">03 / VALORES</div>
+            <h3>Confiança na prática</h3>
+            <p>Autoridade resolutiva, parceria humana, compromisso com a agilidade e excelência na seleção de produtos para uso exigente e continuidade das operações.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="produtos">
+      <div class="section-heading">
+        <div class="eyebrow">Produtos e serviços</div>
+        <h2>Um portfólio para diferentes desafios</h2>
+        <p>Do trabalho diário às aplicações mais exigentes, buscamos oferecer opções que unam qualidade, desempenho e segurança.</p>
+      </div>
+      <div class="products-grid">
+        <article class="product-card">
+          <div class="symbol">+</div>
+          <h3>Parafusos e fixadores</h3>
+          <p>Variedade de materiais e acabamentos para atender diferentes aplicações e necessidades.</p>
+        </article>
+        <article class="product-card">
+          <div class="symbol">⚒</div>
+          <h3>Ferramentas</h3>
+          <p>Ferramentas profissionais para precisão, durabilidade e confiabilidade no dia a dia.</p>
+        </article>
+        <article class="product-card">
+          <div class="symbol">⚙</div>
+          <h3>Máquinas e equipamentos</h3>
+          <p>Equipamentos voltados à produtividade e à precisão na oficina, na obra e na indústria.</p>
+        </article>
+        <article class="product-card">
+          <div class="symbol">✓</div>
+          <h3>EPIs</h3>
+          <p>Itens de proteção para apoiar a segurança e a produtividade dos profissionais.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="solution">
+      <div class="container solution-grid">
+        <div>
+          <div class="eyebrow">Nossa solução</div>
+          <h2>Mais que fornecimento: parceria para o seu trabalho.</h2>
+          <p>Nosso portfólio reúne ferramentas manuais e elétricas, acessórios, itens para soldagem, bits, brocas e EPIs para diferentes necessidades profissionais.</p>
+          <p>Cada produto é escolhido com atenção à qualidade e à aplicação. Queremos ajudar nossos clientes a trabalhar com segurança, precisão e eficiência.</p>
+          <a class="btn btn-primary" href="https://wa.me/5562990397054" target="_blank" rel="noopener">Consulte nossa equipe</a>
+        </div>
+        <img src="images/comasp-oficina.jpg" alt="Profissional realizando trabalho em oficina">
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="contact-inner">
+        <div>
+          <div class="eyebrow" style="color:#fff">Vamos conversar</div>
+          <h2>Conte com a Comasp Ferramentas.</h2>
+          <p><strong>Telefone:</strong> (62) 3086-8300</p>
+          <p><strong>Endereço:</strong> Av. Pio XII com Rua dos Missionários, nº 80, Setor Rodoviário, Goiânia – GO.</p>
+          <p><strong>Instagram:</strong> @comaspferramentas · <strong>Facebook:</strong> Comasp</p>
+        </div>
+        <div class="buttons">
+          <a class="btn" href="https://wa.me/5562990397054" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Av.+Pio+XII+Rua+dos+Mission%C3%A1rios+80+Goi%C3%A2nia+GO" target="_blank" rel="noopener">Ver localização</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="current-year"></span> Comasp Ferramentas. Todos os direitos reservados.</span>
+      <a href="index.html">Voltar para a página inicial ↑</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
