@@ -272,6 +272,45 @@
         transition: none;
       }
     }
+
+  /* Botão para baixar o catálogo no slide 11 */
+#slide-catalogo {
+  position: relative;
+}
+
+.btn-catalogo {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  background: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s, transform .2s;
+}
+
+.btn-catalogo:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+}
+
+@media (max-width: 480px) {
+  .btn-catalogo {
+    bottom: 6%;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+    
   </style>
 </head>
 
@@ -429,29 +468,30 @@
       >
     </section>
 
-    <!-- Slide 11: contato e endereço -->
+    <!-- Slide 11: contato e download do catálogo -->
     <section
       class="slide"
-      aria-label="Contato e endereço"
+      id="slide-catalogo"
+      aria-label="Contato e download do catálogo"
     >
       <img
         src="images/apresentacao-11.jpg"
         alt="Contato e endereço da Comasp Ferramentas"
       >
-    </section>
 
-    <!-- Slide 12: imagem referente ao vídeo de apresentação -->
-    <section
-      class="slide"
-      aria-label="Slide sobre o vídeo de apresentação"
-    >
-      <img
-        src="images/apresentacao-12.jpg"
-        alt="Slide sobre o vídeo de apresentação da loja Comasp"
+      <a
+        class="btn-catalogo"
+        href="https://drive.google.com/uc?export=download&id=1yA8F0eIH_M3mQjmWZ2uPrFIQ5XaWE"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Baixar catálogo da Comasp Ferramentas"
       >
+      ↓ Baixar catálogo
+    </a>
+      
     </section>
-
-    <!-- Slide 13: assinatura visual -->
+    
+    <!-- Slide 12: assinatura visual -->
     <section
       class="slide"
       aria-label="Assinatura visual"
