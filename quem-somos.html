@@ -278,38 +278,44 @@
   position: relative;
 }
 
+/* Botão de download do catálogo */
 .btn-catalogo {
   position: absolute;
   left: 50%;
-  bottom: 12%;
-  transform: translateX(-50%);
+  top: 58%;
+  transform: translate(-50%, -50%);
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 14px 24px;
-  background: var(--orange);
-  color: var(--white);
-  border: 2px solid var(--orange);
+  background: #171717;
+  color: #fff;
+  border: 2px solid #171717;
   border-radius: 5px;
+
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color .2s, transform .2s;
+
+  transition: background-color .2s, color .2s;
 }
 
 .btn-catalogo:hover {
-  background: var(--orange-dark);
-  border-color: var(--orange-dark);
+  background: #fff;
+  color: #171717;
+  border-color: #fff;
 }
 
 @media (max-width: 480px) {
   .btn-catalogo {
-    bottom: 6%;
     padding: 10px 14px;
     font-size: 13px;
   }
 }
+    
   /* Espaço entre o slide do catálogo e a assinatura */
 .slide-catalogo {
   margin-bottom: 40px;
