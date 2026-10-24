@@ -1840,6 +1840,36 @@
   max-width: 220px;
   height: auto;
 }
+
+    /* Botões da seção Conheça a Comasp */
+.botoes-comasp {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.botoes-comasp .btn-catalogo {
+  min-height: 44px;
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+  gap: 6px;
+  border-radius: 5px;
+}
+
+/* Telas menores: permite quebrar quando necessário */
+@media (max-width: 600px) {
+  .botoes-comasp {
+    flex-wrap: wrap;
+  }
+
+  .botoes-comasp .btn-catalogo {
+    font-size: 11px;
+    padding: 11px 13px;
+  }
+}
     
   </style>
 </head>
