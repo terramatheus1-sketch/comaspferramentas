@@ -261,46 +261,87 @@
       }
     }
 
-  /* Botão para baixar o catálogo no slide 11 */
-#slide-catalogo {
-  position: relative;
+     /* Área do catálogo: fundo branco e conteúdo centralizado */
+.slide-catalogo {
+  width: 100%;
+  max-width: var(--max);
+  min-height: 320px;
+  margin: 0 auto;
+  padding: 60px 22px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Botão de download do catálogo */
-.btn-catalogo {
-  position: absolute;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%, -50%);
+.catalogo-conteudo {
+  width: 100%;
+  max-width: 720px;
+}
 
+.catalogo-conteudo h2 {
+  margin: 0 0 18px;
+  color: var(--dark);
+  font-size: clamp(34px, 5vw, 54px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.catalogo-conteudo h2 span {
+  color: var(--orange);
+}
+
+.catalogo-conteudo p {
+  margin: 0 0 30px;
+  color: var(--text);
+  font-size: clamp(17px, 2.5vw, 22px);
+  line-height: 1.5;
+}
+
+/* Botão de download */
+.btn-catalogo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 14px 24px;
-  background: #171717;
-  color: #fff;
-  border: 2px solid #171717;
-  border-radius: 5px;
-
-  font-size: 16px;
+  gap: 12px;
+  min-height: 60px;
+  padding: 16px 28px;
+  background: var(--dark);
+  color: #ffffff;
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  font-size: 17px;
   font-weight: 800;
   text-decoration: none;
-  white-space: nowrap;
-
   transition: background-color .2s, color .2s;
 }
 
 .btn-catalogo:hover {
-  background: #fff;
-  color: #171717;
-  border-color: #fff;
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #ffffff;
+}
+
+.btn-catalogo:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 4px;
 }
 
 @media (max-width: 480px) {
+  .slide-catalogo {
+    min-height: 280px;
+    padding: 44px 18px;
+  }
+
+  .catalogo-conteudo h2 {
+    font-size: 34px;
+  }
+
   .btn-catalogo {
-    padding: 10px 14px;
-    font-size: 13px;
+    min-height: 54px;
+    padding: 13px 18px;
+    font-size: 15px;
   }
 }
     
@@ -536,17 +577,14 @@
 
     <!-- Slide 11: nosso catálogo -->
     <section
-      class="slide slide-catalogo"
+      class="slide-catalogo"
       id="slide-catalogo"
-      aria-label="Baixe nosso catálogo"
+      aria-label="Nosso catálogo"
     >
       <div class="catalogo-conteudo">
-        <h2>Nosso Catálogo</h2>
+        <h2>Nosso <span>Catálogo</span></h2>
 
-        <p>
-          Encontre as ferramentas e soluções ideais
-          para o seu negócio.
-        </p>
+        <p>Conheça nossos produtos.</p>
 
         <a
           class="btn-catalogo"
@@ -554,7 +592,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          ↓ Baixar nosso catálogo
+          <span aria-hidden="true">↓</span>
+          Baixar nosso catálogo
         </a>
       </div>
     </section>
@@ -569,60 +608,6 @@
         alt="Assinatura visual Comasp Ferramentas"
       >
     </section>
-
-    <!-- Contato -->
-    <section
-      class="contact"
-      id="contato"
-      aria-labelledby="contact-title"
-    >
-      <div class="contact-inner">
-        <div class="contact-copy">
-          <h2 id="contact-title">
-            Conte com a Comasp Ferramentas.
-          </h2>
-
-          <p>
-            <strong>Telefone:</strong>
-            <a href="tel:+556230868300">
-              (62) 3086-8300
-            </a>
-          </p>
-
-          <p>
-            <strong>Endereço:</strong>
-            Av. Pio XII com Rua dos Missionários, nº 80,
-            Setor Rodoviário, Goiânia – GO.
-          </p>
-
-          <p>
-            <strong>Instagram:</strong> @comaspferramentas ·
-            <strong>Facebook:</strong> Comasp
-          </p>
-        </div>
-
-        <div class="buttons">
-          <a
-            class="btn"
-            href="https://wa.me/5562990397054"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            class="btn"
-            href="https://maps.app.goo.gl/tUa99kSXtZW6m8qs6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Como chegar ↗
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <footer>
     <div class="footer-inner">
