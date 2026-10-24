@@ -418,6 +418,43 @@
   }
 }
 
+  /* Força o fundo branco na área do catálogo */
+section.slide-catalogo,
+#slide-catalogo {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #171717;
+  margin-bottom: 40px;
+}
+
+/* Texto principal */
+#slide-catalogo .catalogo-conteudo h2 {
+  color: #171717 !important;
+}
+
+/* Frase em preto */
+#slide-catalogo .catalogo-conteudo p {
+  color: #171717 !important;
+}
+
+/* Botão preto */
+#slide-catalogo .btn-catalogo {
+  background: #171717 !important;
+  color: #ffffff !important;
+  border-color: #171717 !important;
+}
+
+/* Seta laranja */
+#slide-catalogo .btn-catalogo span {
+  color: #f15a0a !important;
+}
+
+/* Efeito ao passar o mouse */
+#slide-catalogo .btn-catalogo:hover {
+  background: #333333 !important;
+  border-color: #333333 !important;
+}
+
   </style>
 </head>
 
@@ -576,27 +613,23 @@
     </section>
 
     <!-- Slide 11: nosso catálogo -->
-    <section
-      class="slide-catalogo"
-      id="slide-catalogo"
-      aria-label="Nosso catálogo"
+    <section class="slide-catalogo" id="slide-catalogo">
+  <div class="catalogo-conteudo">
+    <h2>Nosso <span>Catálogo</span></h2>
+
+    <p>Conheça nossos produtos.</p>
+
+    <a
+      class="btn-catalogo"
+      href="https://drive.google.com/uc?export=download&id=1yA8F0eIH_M3mQjmWZ2uPrFIQ5XaWE"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <div class="catalogo-conteudo">
-        <h2>Nosso <span>Catálogo</span></h2>
-
-        <p>Conheça nossos produtos.</p>
-
-        <a
-          class="btn-catalogo"
-          href="https://drive.google.com/uc?export=download&id=1yA8F0eIH_M3mQjmWZ2uPrFIQ5XaWE"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span aria-hidden="true">↓</span>
-          Baixar nosso catálogo
-        </a>
-      </div>
-    </section>
+      <span aria-hidden="true">↓</span>
+      Baixar nosso catálogo
+    </a>
+  </div>
+</section>
     
     <!-- Slide 12: assinatura visual -->
     <section
